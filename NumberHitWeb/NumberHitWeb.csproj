@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NumberHit.Messages\NumberHit.Messages.csproj" />
+    <ProjectReference Include="..\NumberHit.Servises\NumberHit.Servises.csproj" />
+    <ProjectReference Include="..\NumberHit.ViewModels\NumberHit.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

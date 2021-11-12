@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NumberHit.Enums\NumberHit.Enums.csproj" />
     <ProjectReference Include="..\NumberHit.Messages\NumberHit.Messages.csproj" />
   </ItemGroup>
 
