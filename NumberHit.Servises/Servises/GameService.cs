@@ -32,6 +32,8 @@ namespace NumberHit.Servises.Servises
         public void Restart()
         {
             State = GameState.None;
+            ServerNumber = null;
+            UserNumber = null;
         }
 
         public void SetServerNumber(string number)

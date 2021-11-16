@@ -5,39 +5,63 @@
         var container = $('#number-container');
         if (container.find('a').length < 4) {
             var current = $(this).clone();
-            var numbers = getNumbers();
+            var numbers = getNumberCount();
             if ($.inArray(current.attr('numberId'), numbers) === -1) {
                 current.removeClass('a-number');
                 current.addClass('a-number-edit');
                 container.append(current);
+                if (container.find('a').length == 4) {
+                    $("#btnStartGame").removeAttr("disabled");
+                }
             }
         }
     });
 })
 
+
+
 function clearContainer() {
     $('#number-container').html('');
+    $("#btnStartGame").attr("disabled", "disabled");
 }
 
 function startGame() {
-    var data = { objId: 1 };
+    var number = getNumber();
+    var data = { userNumber: number };
     $.ajax({
-        url: '@Url.Action("PassIntFromView", "ControllerName")',
+        url: '/game/start',
         type: "post",
         contentType: 'application/x-www-form-urlencoded',
         data: data,
         success: function (result) {
-            console.log(result);
+            window.location.href = '/game/play';
         }
     });
 }
 
-function getNumbers() {
+function restartGame() {
+    $.ajax({
+        url: '/game/restart',
+        type: "post",
+        contentType: 'application/x-www-form-urlencoded',
+        data: null,
+        success: function (result) {
+            window.location.href = '/home/index';
+        }
+    });
+}
+
+function getNumberCount() {
+    var number = getNumber();
+    return number.length;
+}
+
+function getNumber() {
     var container = $('#number-container');
     var numbersElements = container.find('a');
-    var number = [];
+    var number = "";
     numbersElements.each(function (index, el) {
-        number.push($(el).attr('numberId'))
+        number += $(el).attr('numberId');
     });
     return number;
 }

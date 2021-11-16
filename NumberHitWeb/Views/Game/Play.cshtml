@@ -1,0 +1,24 @@
+﻿@model PlayViewModel
+
+<div class="text-left">
+    <h2>Your number: <b id="yourNumber">@Model.Number</b></h2>
+    <button class="btn btn-info" onclick="restartGame()">Restart Game</button>
+</div>
+
+
+
+<div class="" style="text-align:center">
+    @for (int i = 0; i <= 9; i++)
+    {
+        string source = $"/images/numbers/{i}.png";
+        string controlId = $"#number_{i}";
+
+        <a id="@(controlId)" class="btn btn-default a-number" numberId="@(i)">
+            <img src="@(source)" width="35" />
+        </a>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/game.js"></script>
+}

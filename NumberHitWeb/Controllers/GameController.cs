@@ -29,14 +29,23 @@ namespace NumberHitWeb.Controllers
                 UserNumber = request.UserNumber
             };
             _gameService.Start(message);
-            return View();
+            return Ok();
+        }
+
+        public IActionResult Play()
+        {
+            var model = new PlayViewModel
+            {
+                Number = _gameService.UserNumber
+            };
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Restart()
         {
             _gameService.Restart();
-            return View("/Home/Index");
+            return Ok();
         }
     }
 }
