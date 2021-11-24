@@ -5,8 +5,9 @@
         var container = $('#number-container');
         if (container.find('a').length < 4) {
             var current = $(this).clone();
-            var numbers = getNumberCount();
-            if ($.inArray(current.attr('numberId'), numbers) === -1) {
+            var numbers = getNumber();
+            var numberId = current.attr('numberId');
+            if ($.inArray(numberId, numbers) === -1) {
                 current.removeClass('a-number');
                 current.addClass('a-number-edit');
                 container.append(current);
