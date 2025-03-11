@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 250px;
+            margin: auto;
+        }
+        select, button {
+            width: 80%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #qrcode {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        #error {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        #qr-text {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>QR Code Generator</h2>
+
+    <select id="amount">
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+        <option value="5000">5000</option>
+        <option value="10000">10000</option>
+    </select>
+
+    <select id="time">
+        <option value="10">10 Minutes</option>
+        <option value="20">20 Minutes</option>
+        <option value="30">30 Minutes</option>
+        <option value="60">1 Hour</option>
+        <option value="90">1.5 Hours</option>
+        <option value="120">2 Hours</option>
+    </select>
+
+    <br>
+    <!-- <button onclick="generateQR()">Generate QR Code</button> -->
+
+    <div id="qrcode" style="text-align:justify"></div>
+    <div id="error" style="text-align:justify">tttttttttttt</div>
+    <div id="qr-text" style="text-align:justify"></div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("error").innerHTML = "hhhhhh";
+        });
+        // function generateQR() {
+ 
+
+        //     // var amount = document.getElementById("amount").value;
+        //     // var time = document.getElementById("time").value;
+
+            
+        //     // const newGuid = crypto.randomUUID();
+
+        //     // var datetime = getUtcDateMinusMinutes(time);
+
+        //     // var qrData = "LuckyPay;Organisation_Name_ID_1;"+datetime +";"+ amount +";" + newGuid;
+
+        //     // // Clear previous QR code
+        //     // document.getElementById("qrcode").innerHTML = "";
+        //     // document.getElementById("qr-text").innerHTML = qrData;
+
+        //     // Generate new QR code
+        //     // new QRCode(document.getElementById("qrcode"), {
+        //     //     text: qrData,
+        //     //     width: 200,
+        //     //     height: 200
+        //     // });
+
+        // }
+
+        // function getUtcDateMinusMinutes(timeToMinuse) {
+        //     let now = new Date();
+
+        //     now.setMinutes(now.getMinutes() + (4 * 60));
+        //     now.setMinutes(now.getMinutes() - timeToMinuse);
+            
+        //     let day = String(now.getUTCDate()).padStart(2, '0');
+        //     let month = String(now.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based
+        //     let year = now.getUTCFullYear();
+        //     let hours = String(now.getUTCHours()).padStart(2, '0');
+        //     let minutes = String(now.getUTCMinutes()).padStart(2, '0');
+        //     let seconds = String(now.getUTCSeconds()).padStart(2, '0');
+
+        //     return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+        // }
+    </script>
+
+</body>
+</html>
